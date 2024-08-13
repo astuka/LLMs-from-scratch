@@ -1,4 +1,4 @@
-{
+{ //If you are using Visual Studio Code (VSCode) as your primary code editor, you can find recommended extensions in the `.vscode` subfolder. To install these, open the `extensions.json` file in VSCode and click the "Install" button in the pop-up menu on the lower right.
     "recommendations": [
         "ms-python.python",
         "ms-toolsai.jupyter",
