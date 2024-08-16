@@ -5,7 +5,7 @@ Here is a space for me to work through things myself.
 
 Link to the official [source code repository](https://github.com/rasbt/LLMs-from-scratch)
 
-Left off on 2.3.
+Left off on bonus - bytepair encoder.
 
 <br>
 <br>
