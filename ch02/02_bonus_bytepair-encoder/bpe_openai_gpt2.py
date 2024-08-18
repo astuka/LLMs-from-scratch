@@ -25,9 +25,9 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 # OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os
-import json
-import regex as re
+import os #read os contents
+import json #read JSON files
+import regex as re #use regex
 import requests
 from tqdm import tqdm
 from functools import lru_cache
