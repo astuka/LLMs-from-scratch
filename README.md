@@ -20,6 +20,9 @@ Running notes:
 - In order for the Jupyter notebooks to work, make sure you have the ".venv Python 3.12..." selected
 - Maybe try the isolation again in Docker instead?
 
+- However, in practice, using the softmax function for normalization, which is better at handling extreme values and has more desirable gradient properties during training, is common and recommended. (for getting weights to sum to 1)
+attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
+
 
 
 # Copy and pasted bits I thought were helpful
