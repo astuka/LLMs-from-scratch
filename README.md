@@ -9,8 +9,9 @@ Link to the official [source code repository](https://github.com/rasbt/LLMs-from
 DONE:
 - setup
 - ch02
+- ch03
 
-Left off on ch03.
+Left off on ch04 - performance analysis.
 
 <br>
 <br>
@@ -19,13 +20,14 @@ Running notes:
 
 - In order for the Jupyter notebooks to work, make sure you have the ".venv Python 3.12..." selected
 - Maybe try the isolation again in Docker instead?
-
-- However, in practice, using the softmax function for normalization, which is better at handling extreme values and has more desirable gradient properties during training, is common and recommended. (for getting weights to sum to 1)
-attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
+- Looks like there's CUDA errors, I have torch w/ CUDA installed so it might be an issue with the venv? I hate venv.
 
 
 
 # Copy and pasted bits I thought were helpful
+
+- However, in practice, using the softmax function for normalization, which is better at handling extreme values and has more desirable gradient properties during training, is common and recommended. (for getting weights to sum to 1)
+attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
 
 # Cloud Resources
 
