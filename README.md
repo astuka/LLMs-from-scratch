@@ -11,7 +11,7 @@ DONE:
 - ch02
 - ch03
 
-Left off on ch04 - performance analysis.
+Left off on ch05 - main chapter.
 
 <br>
 <br>
