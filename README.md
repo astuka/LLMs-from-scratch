@@ -11,23 +11,46 @@ DONE:
 - ch02
 - ch03
 
-Left off on ch05 - main chapter.
+Left off on ch05 - exercise solutions.
 
 <br>
 <br>
 
-Running notes:
+# Running Notes
+
 
 - In order for the Jupyter notebooks to work, make sure you have the ".venv Python 3.12..." selected
 - Maybe try the isolation again in Docker instead?
 - Looks like there's CUDA errors, I have torch w/ CUDA installed so it might be an issue with the venv? I hate venv.
 
-
-
-# Copy and pasted bits I thought were helpful
-
 - However, in practice, using the softmax function for normalization, which is better at handling extreme values and has more desirable gradient properties during training, is common and recommended. (for getting weights to sum to 1)
 attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
+
+
+- We use dropout of 0.1 above, but it's relatively common to train LLMs without dropout nowadays
+- Modern LLMs also don't use bias vectors in the `nn.Linear` layers for the query, key, and value matrices (unlike earlier GPT models), which is achieved by setting `"qkv_bias": False`
+- We reduce the context length (`context_length`) of only 256 tokens to reduce the computational resource requirements for training the model, whereas the original 124 million parameter GPT-2 model used 1024 tokens
+  - This is so that more readers will be able to follow and execute the code examples on their laptop computer
+  - However, please feel free to increase the `context_length` to 1024 tokens (this would not require any code changes)
+  - We will also load a model with a 1024 `context_length` later from pretrained weights
+
+
+- In deep learning, instead of maximizing the average log-probability, it's a standard convention to minimize the *negative* average log-probability value; in our case, instead of maximizing -10.7722 so that it approaches 0, in deep learning, we would minimize 10.7722 so that it approaches 0
+- The value negative of -10.7722, i.e., 10.7722, is also called cross-entropy loss in deep learning
+
+
+
+- We use a relatively small dataset for training the LLM (in fact, only one short story)
+- The reasons are:
+  - You can run the code examples in a few minutes on a laptop computer without a suitable GPU
+  - The training finishes relatively fast (minutes instead of weeks), which is good for educational purposes
+  - We use a text from the public domain, which can be included in this GitHub repository without violating any usage rights or bloating the repository size
+
+
+- For example, Llama 2 7B required 184,320 GPU hours on A100 GPUs to be trained on 2 trillion tokens
+  - At the time of this writing, the hourly cost of an 8xA100 cloud server at AWS is approximately \\$30
+  - So, via an off-the-envelope calculation, training this LLM would cost 184,320 / 8 * \\$30 =  \\$690,000
+
 
 # Cloud Resources
 
