@@ -18,6 +18,9 @@ Left off on ch05 - exercise solutions.
 
 # Running Notes
 
+  - Lower top-k and temperatures result in less random outcomes, which is desired when creating educational content, technical writing or question answering, data analyses, code generation, and so forth
+  - Higher top-k and temperatures result in more diverse and random outputs, which is more desirable for brainstorming tasks, creative writing, and so forth
+
 
 - In order for the Jupyter notebooks to work, make sure you have the ".venv Python 3.12..." selected
 - Maybe try the isolation again in Docker instead?
